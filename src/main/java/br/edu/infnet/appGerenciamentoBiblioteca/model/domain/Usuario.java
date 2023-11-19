@@ -15,4 +15,14 @@ public class Usuario {
     private String cpf;
     private double multa;
     private List<Emprestimo> listaEmprestimos = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
 }
