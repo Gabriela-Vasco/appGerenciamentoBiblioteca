@@ -16,6 +16,18 @@ public class Usuario {
     private double multa;
     private List<Emprestimo> listaEmprestimos = new ArrayList<>();
 
+
+    public Usuario(String id, String nome, String email, String cpf) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+    }
+
+    public Usuario(){
+
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +

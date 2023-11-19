@@ -1,3 +1,8 @@
 9788532530802;true;O Código da Mente;Dan Brown;Editora Moderna;Um thriller fascinante que explora os mistérios da mente humana.;Suspense;2022;1
 9788565443026;false;Flores do Amanhã;Isabel Allende;Editora Encanto;Uma emocionante história de amor e superação em meio às adversidades da vida.;Romance;2022;2
 9788576573635;true;A Ilha dos Sonhos;Paulo Coelho;Editora Imaginação;Uma jornada espiritual em busca da verdadeira essência da vida.;Autoajuda;2022;3
+9788551004972;true;A Sombra do Vento;Carlos Ruiz Zafón;Editora Planeta;Um romance misterioso ambientado em uma Barcelona pós-Guerra Civil Espanhola.;Mistério;2019;5
+9788532522784;false;O Pequeno Príncipe;Antoine de Saint-Exupéry;Editora Agir;Uma fábula atemporal que encanta leitores de todas as idades.;Infantil;1943;10
+9788580418549;true;O Poder do Hábito;Charles Duhigg;Editora Objetiva;Explora a ciência por trás dos hábitos e como podemos transformá-los para melhorar nossas vidas.;Psicologia;2018;8
+9788566250949;true;A Cor Púrpura;Alice Walker;Editora Harpo;Uma poderosa narrativa sobre a vida de mulheres negras no sul dos Estados Unidos no início do século XX.;Ficção;2015;3
+9788535908064;false;1984;George Orwell;Companhia Editora Nacional;Um clássico da distopia que aborda temas como controle governamental e liberdade individual.;Ficção Científica;1949;7

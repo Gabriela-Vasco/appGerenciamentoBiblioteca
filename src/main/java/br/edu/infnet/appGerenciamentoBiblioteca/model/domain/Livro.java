@@ -17,7 +17,6 @@ public class Livro extends Item {
                 "id=" + getId() + '\'' +
                 "disponibilidade=" + isDisponibilidade() + '\'' +
                 "titulo=" + getTitulo() + '\'' +
-                "id=" + getId() + '\'' +
                 "autor='" + autor + '\'' +
                 ", editora='" + editora + '\'' +
                 ", sinopse='" + sinopse + '\'' +
