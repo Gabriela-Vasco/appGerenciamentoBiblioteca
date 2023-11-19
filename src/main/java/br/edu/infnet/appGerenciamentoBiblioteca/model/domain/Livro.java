@@ -7,8 +7,23 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-public class Livro {
-    private String autor, editora, sinopse, genero, titulo;
-    private LocalDate anoPublicacao;
+public class Livro extends Item {
+    private String autor, editora, sinopse, genero, anoPublicacao;
     private int edicao;
+
+    @Override
+    public String toString() {
+        return "Livro{" +
+                "id=" + getId() + '\'' +
+                "disponibilidade=" + isDisponibilidade() + '\'' +
+                "titulo=" + getTitulo() + '\'' +
+                "id=" + getId() + '\'' +
+                "autor='" + autor + '\'' +
+                ", editora='" + editora + '\'' +
+                ", sinopse='" + sinopse + '\'' +
+                ", genero='" + genero + '\'' +
+                ", anoPublicacao='" + anoPublicacao + '\'' +
+                ", edicao=" + edicao +
+                '}';
+    }
 }

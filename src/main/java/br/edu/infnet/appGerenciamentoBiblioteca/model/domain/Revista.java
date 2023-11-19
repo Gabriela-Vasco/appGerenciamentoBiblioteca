@@ -9,6 +9,6 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class Revista extends Item {
-    private String volume, numero, editora, titulo, localPublicacao;
+    private String volume, numero, editora, localPublicacao;
     private LocalDate anoPublicacao;
 }

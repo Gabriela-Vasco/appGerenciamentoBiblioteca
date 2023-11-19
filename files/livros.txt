@@ -1,0 +1,3 @@
+9788532530802;true;O Código da Mente;Dan Brown;Editora Moderna;Um thriller fascinante que explora os mistérios da mente humana.;Suspense;2022;1
+9788565443026;false;Flores do Amanhã;Isabel Allende;Editora Encanto;Uma emocionante história de amor e superação em meio às adversidades da vida.;Romance;2022;2
+9788576573635;true;A Ilha dos Sonhos;Paulo Coelho;Editora Imaginação;Uma jornada espiritual em busca da verdadeira essência da vida.;Autoajuda;2022;3
