@@ -14,9 +14,7 @@ public class Livro extends Item {
     @Override
     public String toString() {
         return "Livro{" +
-                "id=" + getId() + '\'' +
-                "disponibilidade=" + isDisponibilidade() + '\'' +
-                "titulo=" + getTitulo() + '\'' +
+                super.toString() +
                 "autor='" + autor + '\'' +
                 ", editora='" + editora + '\'' +
                 ", sinopse='" + sinopse + '\'' +

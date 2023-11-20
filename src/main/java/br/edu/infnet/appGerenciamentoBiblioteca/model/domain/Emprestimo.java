@@ -37,9 +37,9 @@ public class Emprestimo {
     public String toString() {
         return "Emprestimo{" +
                 "id='" + id + '\'' +
-                ", usuario=" + usuario.getId() +
+                ", usuario=" + usuario +
                 ", status=" + status +
-                ", listaItems=" + listaItems.size() +
+                ", listaItems=" + listaItems+
                 ", dataEmprestimo=" + dataEmprestimo +
                 ", dataDevolucaoPrevista=" + dataDevolucaoPrevista +
                 ", dataDevolucaoReal=" + dataDevolucaoReal +

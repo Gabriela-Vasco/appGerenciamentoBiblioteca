@@ -3,6 +3,7 @@ package br.edu.infnet.appGerenciamentoBiblioteca;
 import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Livro;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -10,6 +11,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 
+@Order(2)
 @Component
 public class LivroLoader implements ApplicationRunner {
     private Map<String, Livro> mapa = new HashMap<String, Livro>();

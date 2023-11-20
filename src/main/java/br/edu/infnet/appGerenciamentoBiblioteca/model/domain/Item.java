@@ -5,17 +5,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Item {
+public abstract class Item {
     private String id;
     private boolean disponibilidade;
     private String titulo;
 
     @Override
     public String toString() {
-        return "Item{" +
-                "id='" + id + '\'' +
+        return  "id='" + id + '\'' +
                 ", disponibilidade=" + disponibilidade +
-                ", titulo='" + titulo + '\'' +
-                '}';
+                ", titulo='" + titulo + '\'';
     }
 }

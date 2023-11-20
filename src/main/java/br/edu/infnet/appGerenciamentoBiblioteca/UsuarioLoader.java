@@ -3,6 +3,7 @@ package br.edu.infnet.appGerenciamentoBiblioteca;
 import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Usuario;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -10,6 +11,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 
+@Order(1)
 @Component
 public class UsuarioLoader implements ApplicationRunner {
 
