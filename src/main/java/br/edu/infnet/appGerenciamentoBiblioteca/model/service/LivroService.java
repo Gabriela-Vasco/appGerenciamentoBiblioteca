@@ -1,7 +1,6 @@
 package br.edu.infnet.appGerenciamentoBiblioteca.model.service;
 
 import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Livro;
-import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Usuario;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

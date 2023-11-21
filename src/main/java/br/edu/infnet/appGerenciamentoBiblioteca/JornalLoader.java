@@ -1,10 +1,6 @@
 package br.edu.infnet.appGerenciamentoBiblioteca;
 
-import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Emprestimo;
-import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Item;
 import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Jornal;
-import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Usuario;
-import br.edu.infnet.appGerenciamentoBiblioteca.model.service.EmprestimoService;
 import br.edu.infnet.appGerenciamentoBiblioteca.model.service.JornalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -15,8 +11,6 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 @Order(4)
 @Component

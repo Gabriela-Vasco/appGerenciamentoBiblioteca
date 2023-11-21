@@ -1,8 +1,6 @@
 package br.edu.infnet.appGerenciamentoBiblioteca;
 
-import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Livro;
 import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Revista;
-import br.edu.infnet.appGerenciamentoBiblioteca.model.service.LivroService;
 import br.edu.infnet.appGerenciamentoBiblioteca.model.service.RevistaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
