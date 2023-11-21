@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 public class Emprestimo {
     private String id;
-    private boolean status;
+    private boolean atrasado;
     private LocalDateTime dataEmprestimo;
     private LocalDateTime dataDevolucaoPrevista;
     private LocalDateTime dataDevolucaoReal;
@@ -19,9 +19,9 @@ public class Emprestimo {
     private List<Item> listaItems = new ArrayList<>();
 
 
-    public Emprestimo(String id, boolean status, LocalDateTime dataEmprestimo, LocalDateTime dataDevolucaoPrevista, LocalDateTime dataDevolucaoReal, Usuario usuario, List<Item> listaItems) {
+    public Emprestimo(String id, boolean atrasado, LocalDateTime dataEmprestimo, LocalDateTime dataDevolucaoPrevista, LocalDateTime dataDevolucaoReal, Usuario usuario, List<Item> listaItems) {
         this.id = id;
-        this.status = status;
+        this.atrasado = atrasado;
         this.dataEmprestimo = dataEmprestimo;
         this.dataDevolucaoPrevista = dataDevolucaoPrevista;
         this.dataDevolucaoReal = dataDevolucaoReal;
@@ -38,7 +38,7 @@ public class Emprestimo {
         return "Emprestimo{" +
                 "id='" + id + '\'' +
                 ", usuario=" + usuario +
-                ", status=" + status +
+                ", atrasado=" + atrasado +
                 ", listaItems=" + listaItems+
                 ", dataEmprestimo=" + dataEmprestimo +
                 ", dataDevolucaoPrevista=" + dataDevolucaoPrevista +

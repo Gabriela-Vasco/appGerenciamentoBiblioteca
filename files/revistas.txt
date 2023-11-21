@@ -1,0 +1,10 @@
+1;true;Ciência Hoje;Vol. 25;Núm. 3;Editora Abril;São Paulo;2023-03-01
+2;false;National Geographic;Vol. 50;Núm. 2;Editora Globo;Rio de Janeiro;2023-04-01
+3;true;Economia & Negócios;Vol. 10;Núm. 1;Editora Exame;São Paulo;2023-02-01
+4;false;Arte Moderna;Vol. 5;Núm. 4;Editora Cultura;Belo Horizonte;2023-05-01
+5;true;Saúde em Foco;Vol. 15;Núm. 2;Editora Saúde;Brasília;2023-01-01
+6;true;Tecnologia Avançada;Vol. 8;Núm. 3;Editora Tech;Campinas;2023-03-01
+7;false;História Ilustrada;Vol. 30;Núm. 6;Editora História;Recife;2023-06-01
+8;true;Natureza Viva;Vol. 12;Núm. 1;Editora Natureza;Porto Alegre;2023-01-01
+9;false;Design Inovador;Vol. 7;Núm. 5;Editora Design;Curitiba;2023-05-01
+10;true;Culinária Gourmet;Vol. 18;Núm. 4;Editora Gastronomia;Florianópolis;2023-04-01

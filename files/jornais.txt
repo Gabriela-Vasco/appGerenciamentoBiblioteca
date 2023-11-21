@@ -1,0 +1,10 @@
+1;true;O Estado de São Paulo;Ed. 12345;Núm. 6789;São Paulo;2023-11-19
+2;false;Folha de S.Paulo;Ed. 54321;Núm. 9876;São Paulo;2023-11-20
+3;true;O Globo;Ed. 11111;Núm. 22222;Rio de Janeiro;2023-11-21
+4;false;Correio Brasiliense;Ed. 99999;Núm. 88888;Brasília;2023-11-22
+5;true;Diário Gaúcho;Ed. 123;Núm. 456;Porto Alegre;2023-11-23
+6;true;O Tempo;Ed. 789;Núm. 012;Belo Horizonte;2023-11-24
+7;false;Correio do Povo;Ed. 456;Núm. 789;Porto Alegre;2023-11-25
+8;true;Jornal do Commercio;Ed. 135;Núm. 790;Recife;2023-11-26
+9;false;O Povo;Ed. 246;Núm. 135;Fortaleza;2023-11-27
+10;true;A Tarde;Ed. 789;Núm. 101;Salvador;2023-11-28

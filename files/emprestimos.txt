@@ -1,5 +1,6 @@
-1;Gabriela Vasco;09088767856;email@email.com;true;9788532530802;2023-11-19;2023-11-26;2023-11-26
-2;Laura Machado;99988877767;laura@laura.com;false;9788565443026;2023-11-20;2023-11-27;
-3;Carolina Silva;09078956745;carolina@carolina.com;true;9788576573635;2023-11-21;2023-11-28;2023-11-28
-4;Mariana Oliveira;11223344556;mariana@email.com;false;9788551004972;2023-11-22;2023-11-29;
-5;Lucas Pereira;87654321098;lucas@pereira.com;true;9788532522784;2023-11-23;2023-11-30;2023-11-30
+E;1;Gabriela Vasco;09088767856;email@email.com;true;2023-11-19;2023-11-26;2023-11-26
+J;9788535908064;true;A Tarde;Ed. 789;Núm. 101;Salvador;2023-11-28
+L;10;false;1984;George Orwell;Companhia Editora Nacional;Um clássico da distopia que aborda temas como controle governamental e liberdade individual.;Ficção Científica;1949;7
+E;2;Laura Machado;99988877767;laura@laura.com;false;2023-11-19;2023-11-26;2023-11-26
+L;9788566250949;true;A Cor Púrpura;Alice Walker;Editora Harpo;Uma poderosa narrativa sobre a vida de mulheres negras no sul dos Estados Unidos no início do século XX.;Ficção;2015;3
+R;9;false;Design Inovador;Vol. 7;Núm. 5;Editora Design;Curitiba;2023-05-01

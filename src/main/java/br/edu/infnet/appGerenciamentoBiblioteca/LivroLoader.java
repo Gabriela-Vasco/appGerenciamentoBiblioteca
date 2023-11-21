@@ -1,6 +1,8 @@
 package br.edu.infnet.appGerenciamentoBiblioteca;
 
 import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Livro;
+import br.edu.infnet.appGerenciamentoBiblioteca.model.service.LivroService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
@@ -8,16 +10,15 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
 
 @Order(2)
 @Component
 public class LivroLoader implements ApplicationRunner {
-    private Map<String, Livro> mapa = new HashMap<String, Livro>();
+    @Autowired
+    private LivroService livroService;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        //leitura do arquivo texto
 
         FileReader file = new FileReader("files/livros.txt");
         BufferedReader leitura = new BufferedReader(file);
@@ -29,7 +30,6 @@ public class LivroLoader implements ApplicationRunner {
         while(linha != null){
             campos = linha.split(";");
 
-            //preenchimento do objeto
             Livro livro = new Livro();
             livro.setId(campos[0]);
             livro.setDisponibilidade(Boolean.valueOf(campos[1]));
@@ -37,18 +37,17 @@ public class LivroLoader implements ApplicationRunner {
             livro.setAutor(campos[3]);
             livro.setEditora(campos[4]);
             livro.setSinopse(campos[5]);
-            livro.setAnoPublicacao(campos[6]);
-            livro.setEdicao(Integer.valueOf(campos[7]));
+            livro.setGenero(campos[6]);
+            livro.setAnoPublicacao(campos[7]);
+            livro.setEdicao(Integer.valueOf(campos[8]));
 
-
-            //inclusão do objeto no map
-            mapa.put(livro.getId(), livro);
+            livroService.incluir(livro);
 
             linha = leitura.readLine();
         }
 
-        for (Livro livro : mapa.values()) {
-            System.out.println("Livro " + livro);
+        for (Livro livro : livroService.obterLista()) {
+            System.out.println("LIVRO " + livro);
         }
 
         leitura.close();
