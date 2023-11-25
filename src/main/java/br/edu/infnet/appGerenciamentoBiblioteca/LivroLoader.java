@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-@Order(2)
 @Component
 public class LivroLoader implements ApplicationRunner {
     @Autowired
@@ -31,7 +30,6 @@ public class LivroLoader implements ApplicationRunner {
             campos = linha.split(";");
 
             Livro livro = new Livro();
-            livro.setId(campos[0]);
             livro.setDisponibilidade(Boolean.valueOf(campos[1]));
             livro.setTitulo(campos[2]);
             livro.setAutor(campos[3]);

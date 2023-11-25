@@ -1,12 +1,12 @@
 package br.edu.infnet.appGerenciamentoBiblioteca.model.domain;
 
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Getter
 @Setter
+@Entity
 public class Livro extends Item {
     private String autor, editora, sinopse, genero, anoPublicacao;
     private int edicao;

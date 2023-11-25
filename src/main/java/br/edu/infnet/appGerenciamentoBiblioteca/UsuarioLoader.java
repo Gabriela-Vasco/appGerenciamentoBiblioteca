@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-@Order(1)
 @Component
 public class UsuarioLoader implements ApplicationRunner {
     @Autowired
@@ -32,7 +31,6 @@ public class UsuarioLoader implements ApplicationRunner {
             usuario.setNome(campos[0]);
             usuario.setCpf(campos[1]);
             usuario.setEmail(campos[2]);
-            usuario.setId(campos[1] + campos[1]);
 
             usuarioService.incluir(usuario);
 

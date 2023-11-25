@@ -12,7 +12,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.time.LocalDate;
 
-@Order(3)
 @Component
 public class RevistaLoader implements ApplicationRunner {
     @Autowired
@@ -32,7 +31,6 @@ public class RevistaLoader implements ApplicationRunner {
             campos = linha.split(";");
 
             Revista revista = new Revista();
-            revista.setId(campos[0]);
             revista.setDisponibilidade(Boolean.valueOf(campos[1]));
             revista.setTitulo(campos[2]);
             revista.setVolume(campos[3]);

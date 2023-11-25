@@ -3,10 +3,16 @@ package br.edu.infnet.appGerenciamentoBiblioteca.model.domain;
 import lombok.Getter;
 import lombok.Setter;
 
+import jakarta.persistence.*;
+
 @Getter
 @Setter
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Item {
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private boolean disponibilidade;
     private String titulo;
 

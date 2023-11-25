@@ -14,7 +14,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-@Order(5)
 @Component
 public class EmprestimoLoader implements ApplicationRunner {
     @Autowired
@@ -37,9 +36,8 @@ public class EmprestimoLoader implements ApplicationRunner {
             switch (campos[0]){
                 case "E":
                     emprestimo = new Emprestimo();
-                    emprestimo.setId(campos[1]);
-                    emprestimo.setUsuario(new Usuario(campos[3] + campos[3], campos[2], campos[3], campos[4]));
-                    emprestimo.setAtrasado(Boolean.valueOf(campos[5]));
+                    emprestimo.setUsuario(new Usuario(campos[1], campos[2], campos[3]));
+                    emprestimo.setAtrasado(Boolean.valueOf(campos[4]));
                     emprestimo.setListaItems(new ArrayList<>());
                     emprestimo.setDataEmprestimo(LocalDateTime.now());
                     emprestimo.setDataDevolucaoPrevista(emprestimo.getDataEmprestimo().plusDays(7));
@@ -50,42 +48,39 @@ public class EmprestimoLoader implements ApplicationRunner {
 
                 case "J":
                     Jornal jornal = new Jornal();
-                    jornal.setId(campos[1]);
-                    jornal.setDisponibilidade(Boolean.valueOf(campos[2]));
-                    jornal.setTitulo(campos[3]);
-                    jornal.setVolume(campos[4]);
-                    jornal.setNumero(campos[5]);
-                    jornal.setLocalPublicacao(campos[6]);
-                    jornal.setDataPublicacao(LocalDate.parse(campos[7]));
+                    jornal.setDisponibilidade(Boolean.valueOf(campos[1]));
+                    jornal.setTitulo(campos[2]);
+                    jornal.setVolume(campos[3]);
+                    jornal.setNumero(campos[4]);
+                    jornal.setLocalPublicacao(campos[5]);
+                    jornal.setDataPublicacao(LocalDate.parse(campos[6]));
 
                     emprestimo.getListaItems().add(jornal);
                     break;
 
                 case "L":
                     Livro livro = new Livro();
-                    livro.setId(campos[1]);
-                    livro.setDisponibilidade(Boolean.valueOf(campos[2]));
-                    livro.setTitulo(campos[3]);
-                    livro.setAutor(campos[4]);
-                    livro.setEditora(campos[5]);
-                    livro.setSinopse(campos[6]);
-                    livro.setGenero(campos[7]);
-                    livro.setAnoPublicacao(campos[8]);
-                    livro.setEdicao(Integer.valueOf(campos[9]));
+                    livro.setDisponibilidade(Boolean.valueOf(campos[1]));
+                    livro.setTitulo(campos[2]);
+                    livro.setAutor(campos[3]);
+                    livro.setEditora(campos[4]);
+                    livro.setSinopse(campos[5]);
+                    livro.setGenero(campos[6]);
+                    livro.setAnoPublicacao(campos[7]);
+                    livro.setEdicao(Integer.valueOf(campos[8]));
 
                     emprestimo.getListaItems().add(livro);
                     break;
 
                 case "R":
                     Revista revista = new Revista();
-                    revista.setId(campos[1]);
-                    revista.setDisponibilidade(Boolean.valueOf(campos[2]));
-                    revista.setTitulo(campos[3]);
-                    revista.setVolume(campos[4]);
-                    revista.setNumero(campos[5]);
-                    revista.setEditora(campos[6]);
-                    revista.setLocalPublicacao(campos[7]);
-                    revista.setAnoPublicacao(LocalDate.parse(campos[8]));
+                    revista.setDisponibilidade(Boolean.valueOf(campos[1]));
+                    revista.setTitulo(campos[2]);
+                    revista.setVolume(campos[3]);
+                    revista.setNumero(campos[4]);
+                    revista.setEditora(campos[5]);
+                    revista.setLocalPublicacao(campos[6]);
+                    revista.setAnoPublicacao(LocalDate.parse(campos[7]));
 
                     emprestimo.getListaItems().add(revista);
                     break;

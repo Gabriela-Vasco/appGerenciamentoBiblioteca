@@ -12,7 +12,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.time.LocalDate;
 
-@Order(4)
 @Component
 public class JornalLoader implements ApplicationRunner {
     @Autowired
@@ -31,7 +30,7 @@ public class JornalLoader implements ApplicationRunner {
             campos = linha.split(";");
 
             Jornal jornal = new Jornal();
-            jornal.setId(campos[0]);
+            jornal.setTitulo(campos[0]);
             jornal.setDisponibilidade(Boolean.valueOf(campos[1]));
             jornal.setTitulo(campos[2]);
             jornal.setVolume(campos[3]);
