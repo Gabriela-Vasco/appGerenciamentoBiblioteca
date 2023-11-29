@@ -19,19 +19,22 @@ public class Emprestimo {
     private LocalDateTime dataEmprestimo;
     private LocalDateTime dataDevolucaoPrevista;
     private LocalDateTime dataDevolucaoReal;
-    @Transient
+
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "usuarioId")
     private Usuario usuario;
-    @Transient
+
+    @ManyToMany(cascade = CascadeType.DETACH)
     private List<Item> listaItems = new ArrayList<>();
 
 
-    public Emprestimo(boolean atrasado, LocalDateTime dataEmprestimo, LocalDateTime dataDevolucaoPrevista, LocalDateTime dataDevolucaoReal, Usuario usuario, List<Item> listaItems) {
+    public Emprestimo(boolean atrasado, LocalDateTime dataEmprestimo, LocalDateTime dataDevolucaoPrevista, LocalDateTime dataDevolucaoReal, Usuario usuario) {
         this.atrasado = atrasado;
         this.dataEmprestimo = dataEmprestimo;
         this.dataDevolucaoPrevista = dataDevolucaoPrevista;
         this.dataDevolucaoReal = dataDevolucaoReal;
         this.usuario = usuario;
-        this.listaItems = listaItems;
+        this.listaItems = new ArrayList<>();
     }
 
     public Emprestimo(){
@@ -44,7 +47,7 @@ public class Emprestimo {
                 "id='" + id + '\'' +
                 ", usuario=" + usuario +
                 ", atrasado=" + atrasado +
-                ", listaItems=" + listaItems+
+               ", listaItems=" + listaItems+
                 ", dataEmprestimo=" + dataEmprestimo +
                 ", dataDevolucaoPrevista=" + dataDevolucaoPrevista +
                 ", dataDevolucaoReal=" + dataDevolucaoReal +

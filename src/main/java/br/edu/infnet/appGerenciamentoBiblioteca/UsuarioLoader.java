@@ -11,7 +11,9 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+
 @Component
+@Order(1)
 public class UsuarioLoader implements ApplicationRunner {
     @Autowired
     private UsuarioService usuarioService;

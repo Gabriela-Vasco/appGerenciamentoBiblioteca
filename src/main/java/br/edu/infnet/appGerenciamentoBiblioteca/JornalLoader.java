@@ -13,6 +13,7 @@ import java.io.FileReader;
 import java.time.LocalDate;
 
 @Component
+@Order(2)
 public class JornalLoader implements ApplicationRunner {
     @Autowired
     private JornalService jornalService;

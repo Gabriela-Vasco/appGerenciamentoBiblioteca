@@ -4,7 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -17,8 +20,9 @@ public class Usuario {
     private String nome;
     private String email;
     private String cpf;
-    private double multa;
-    @Transient
+    private double multa = 0.0;
+
+    @OneToMany(mappedBy = "usuario")
     private List<Emprestimo> listaEmprestimos = new ArrayList<>();
 
 
@@ -32,6 +36,17 @@ public class Usuario {
 
     }
 
+    public void setMulta() {
+        if (getListaEmprestimos() != null) {
+            for (Emprestimo emprestimo : getListaEmprestimos()) {
+                if (emprestimo.isAtrasado() || emprestimo.getDataDevolucaoReal().isAfter(emprestimo.getDataDevolucaoPrevista())) {
+                    this.multa = this.multa + 1.50;
+                }
+            }
+        }
+    }
+
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -39,6 +54,7 @@ public class Usuario {
                 ", email='" + email + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", id='" + id + '\'' +
+                ", multa='" + multa + '\'' +
                 '}';
     }
 }

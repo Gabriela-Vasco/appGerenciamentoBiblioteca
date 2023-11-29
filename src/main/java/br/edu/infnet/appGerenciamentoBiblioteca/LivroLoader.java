@@ -12,6 +12,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 @Component
+@Order(3)
 public class LivroLoader implements ApplicationRunner {
     @Autowired
     private LivroService livroService;

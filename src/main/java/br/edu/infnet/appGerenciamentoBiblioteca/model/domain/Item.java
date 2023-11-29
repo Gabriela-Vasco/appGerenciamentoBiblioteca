@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -15,6 +17,9 @@ public abstract class Item {
     private Integer id;
     private boolean disponibilidade;
     private String titulo;
+
+    @ManyToMany(mappedBy = "listaItems")
+    private List<Emprestimo> emprestimos;
 
     @Override
     public String toString() {

@@ -1,6 +1,6 @@
-E;Gabriela Vasco;09088767856;email@email.com;true;2023-11-19;2023-11-26;2023-11-26
+E;Gabriela Vasco;09088767856;email@email.com;true;2023-11-19;2023-11-26;2023-11-30
 J;true;A Tarde;Ed. 789;Núm. 101;Salvador;2023-11-28
 L;false;1984;George Orwell;Companhia Editora Nacional;Um clássico da distopia que aborda temas como controle governamental e liberdade individual.;Ficção Científica;1949;7
-E;Laura Machado;99988877767;laura@laura.com;false;2023-11-19;2023-11-26;2023-11-26
+E;Laura Machado;99988877767;laura@laura.com;false;2023-11-19;2023-11-30;2023-11-26
 L;true;A Cor Púrpura;Alice Walker;Editora Harpo;Uma poderosa narrativa sobre a vida de mulheres negras no sul dos Estados Unidos no início do século XX.;Ficção;2015;3
 R;false;Design Inovador;Vol. 7;Núm. 5;Editora Design;Curitiba;2023-05-01

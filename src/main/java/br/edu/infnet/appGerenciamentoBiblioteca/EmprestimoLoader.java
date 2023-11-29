@@ -2,6 +2,8 @@ package br.edu.infnet.appGerenciamentoBiblioteca;
 
 import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.*;
 import br.edu.infnet.appGerenciamentoBiblioteca.model.service.EmprestimoService;
+import br.edu.infnet.appGerenciamentoBiblioteca.model.service.ItemService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -13,15 +15,19 @@ import java.io.FileReader;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 @Component
+@Order(5)
 public class EmprestimoLoader implements ApplicationRunner {
     @Autowired
     private EmprestimoService emprestimoService;
+
     @Override
+    @Transactional
     public void run(ApplicationArguments args) throws Exception {
 
-        FileReader file = new FileReader("files/emprestimos.txt");
+        FileReader file = new FileReader("files/emprestimos2.txt");
         BufferedReader leitura = new BufferedReader(file);
 
         String linha = leitura.readLine();
@@ -30,13 +36,37 @@ public class EmprestimoLoader implements ApplicationRunner {
 
         Emprestimo emprestimo = null;
 
-        while(linha != null){
+        while (linha != null) {
             campos = linha.split(";");
 
-            switch (campos[0]){
+            switch (campos[0]) {
+                case "J":
+                    Jornal jornal = new Jornal();
+                    jornal.setId(Integer.valueOf(campos[1]));
+
+                    emprestimo.getListaItems().add(jornal);
+                    break;
+
+                case "L":
+                    Livro livro = new Livro();
+                    livro.setId(Integer.valueOf(campos[1]));
+
+                    emprestimo.getListaItems().add(livro);
+                    break;
+
+                case "R":
+                    Revista revista = new Revista();
+                    revista.setId(Integer.valueOf(campos[1]));
+
+                    emprestimo.getListaItems().add(revista);
+                    break;
+
                 case "E":
+                    Usuario usuario = new Usuario();
+                    usuario.setId(Integer.valueOf(campos[1]));
+
                     emprestimo = new Emprestimo();
-                    emprestimo.setUsuario(new Usuario(campos[1], campos[2], campos[3]));
+                    emprestimo.setUsuario(usuario);
                     emprestimo.setAtrasado(Boolean.valueOf(campos[4]));
                     emprestimo.setListaItems(new ArrayList<>());
                     emprestimo.setDataEmprestimo(LocalDateTime.now());
@@ -44,45 +74,6 @@ public class EmprestimoLoader implements ApplicationRunner {
                     emprestimo.setDataDevolucaoReal(emprestimo.getDataEmprestimo().plusDays(7));
 
                     emprestimoService.incluir(emprestimo);
-                    break;
-
-                case "J":
-                    Jornal jornal = new Jornal();
-                    jornal.setDisponibilidade(Boolean.valueOf(campos[1]));
-                    jornal.setTitulo(campos[2]);
-                    jornal.setVolume(campos[3]);
-                    jornal.setNumero(campos[4]);
-                    jornal.setLocalPublicacao(campos[5]);
-                    jornal.setDataPublicacao(LocalDate.parse(campos[6]));
-
-                    emprestimo.getListaItems().add(jornal);
-                    break;
-
-                case "L":
-                    Livro livro = new Livro();
-                    livro.setDisponibilidade(Boolean.valueOf(campos[1]));
-                    livro.setTitulo(campos[2]);
-                    livro.setAutor(campos[3]);
-                    livro.setEditora(campos[4]);
-                    livro.setSinopse(campos[5]);
-                    livro.setGenero(campos[6]);
-                    livro.setAnoPublicacao(campos[7]);
-                    livro.setEdicao(Integer.valueOf(campos[8]));
-
-                    emprestimo.getListaItems().add(livro);
-                    break;
-
-                case "R":
-                    Revista revista = new Revista();
-                    revista.setDisponibilidade(Boolean.valueOf(campos[1]));
-                    revista.setTitulo(campos[2]);
-                    revista.setVolume(campos[3]);
-                    revista.setNumero(campos[4]);
-                    revista.setEditora(campos[5]);
-                    revista.setLocalPublicacao(campos[6]);
-                    revista.setAnoPublicacao(LocalDate.parse(campos[7]));
-
-                    emprestimo.getListaItems().add(revista);
                     break;
 
                 default:
@@ -95,6 +86,7 @@ public class EmprestimoLoader implements ApplicationRunner {
         }
 
         for (Emprestimo emprestimo1 : emprestimoService.obterLista()) {
+            emprestimo1.getListaItems().size();
             System.out.println("EMPRESTIMO " + emprestimo1);
         }
 
