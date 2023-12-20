@@ -22,4 +22,8 @@ public class ItemService {
     public Collection<Item> obterLista(){
         return (Collection<Item>) itemRepository.findAll();
     }
+
+    public void excluir(Integer id) {
+        itemRepository.deleteById(id);
+    }
 }

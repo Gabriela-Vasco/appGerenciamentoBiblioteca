@@ -1,5 +1,8 @@
 package br.edu.infnet.appGerenciamentoBiblioteca.model.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,8 +25,13 @@ public class Usuario {
     private String cpf;
     private double multa = 0.0;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "usuario")
     private List<Emprestimo> listaEmprestimos = new ArrayList<>();
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "idEndereco")
+    private Endereco endereco;
 
 
     public Usuario(String nome, String email, String cpf) {

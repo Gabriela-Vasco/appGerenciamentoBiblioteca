@@ -19,4 +19,8 @@ public class EmprestimoService {
     public Collection<Emprestimo> obterLista(){
         return (Collection<Emprestimo>) emprestimoRepository.findAll();
     }
+
+    public void excluir(Integer id) {
+        emprestimoRepository.deleteById(id);
+    }
 }

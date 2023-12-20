@@ -1,5 +1,7 @@
 package br.edu.infnet.appGerenciamentoBiblioteca.model.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,6 +22,7 @@ public class Emprestimo {
     private LocalDateTime dataDevolucaoPrevista;
     private LocalDateTime dataDevolucaoReal;
 
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "usuarioId")
     private Usuario usuario;
