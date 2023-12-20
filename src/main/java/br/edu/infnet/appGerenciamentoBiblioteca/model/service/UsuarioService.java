@@ -1,5 +1,6 @@
 package br.edu.infnet.appGerenciamentoBiblioteca.model.service;
 
+import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Endereco;
 import br.edu.infnet.appGerenciamentoBiblioteca.model.domain.Usuario;
 import br.edu.infnet.appGerenciamentoBiblioteca.model.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,16 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private EnderecoService enderecoService;
+
     public void incluir(Usuario usuario){
+        String cep = usuario.getEndereco().getCep();
+
+        Endereco endereco = enderecoService.buscarCep(cep);
+
+        usuario.setEndereco(endereco);
+
         usuarioRepository.save(usuario);
     }
     public Collection<Usuario> obterLista(){
